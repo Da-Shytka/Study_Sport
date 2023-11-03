@@ -1,0 +1,12 @@
+{
+  "logoData": { "alt": "logo1", "src": "./assets/img/logo.svg", "href": "#" },
+  "menuData": [
+    { "title": "Главная", "href": "/" },
+    { "title": "Загрузка изображений", "href": "/imageGallery" },
+    { "title": "Admin", "href": "/admin" }
+  ],
+  "buttonsData": [
+    { "title": "Войти", "href": "#", "isPrimary": false },
+    { "title": "Зарегистрироваться", "href": "#", "isPrimary": true }
+  ]
+}
