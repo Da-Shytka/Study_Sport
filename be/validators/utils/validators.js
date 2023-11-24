@@ -11,14 +11,12 @@ const isArrayHasLength = (arr) => {
 // валидатор наличия длины у объекта
 const isObjectHasLength = (obj) => {
   if (typeof obj === "object" && objectLength(obj) === 0) return null;
-
   return objectLength(obj);
 };
 
 const isObjectHasProps = (obj, props) => {
   if (!isObjectHasLength(obj))
     throw new Error("Объект не является объектом или это пустой объект");
-
   if (!isArrayHasLength)
     throw new Error(
       "Параметр props не является массивом или это пустой массив"

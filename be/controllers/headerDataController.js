@@ -20,12 +20,7 @@ const getHeaderData = (req, res, next) => {
 const postHeaderData = (req, res, next) => {
   try {
     const data = req.body;
-
-    // валидируем данные
-    // если невалидны, то бросит ошибку
     isHeaderDataValid(data);
-
-    // если с данными все ок, тогда пишем в файл через модель файлов
     postHeaderDataModel(JSON.stringify(data));
     res.status(200).json({
       message: "Данные успешно обновлены",

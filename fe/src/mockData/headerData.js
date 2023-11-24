@@ -1,18 +1,3 @@
-export const menuData = [
-  {
-    title: "Главная",
-    href: "/",
-  },
-  {
-    title: "Загрузка изображений",
-    href: "/imageGallery",
-  },
-  {
-    title: "Aдмин",
-    href: "/admin",
-  },
-];
-
 export const buttonsData = [
   {
     title: "Войти",
@@ -34,7 +19,6 @@ export const logoData = {
 
 const headerData = {
   logoData,
-  menuData,
   buttonsData,
 };
 

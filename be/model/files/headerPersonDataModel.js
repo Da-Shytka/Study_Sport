@@ -1,9 +1,9 @@
 const { readFileSync, writeFileSync } = require("fs");
 const { join } = require("path");
 
-const filePath = join(__dirname, "..", "..", "db", "files", "headerData.json");
+const filePath = join(__dirname, "..", "..", "db", "files", "headerPersonData.json");
 
-const getHeaderDataModel = () => {
+const getHeaderPersonDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
     return JSON.parse(file);
@@ -13,7 +13,7 @@ const getHeaderDataModel = () => {
   }
 };
 
-const postHeaderDataModel = (data) => {
+const postHeaderPersonDataModel = (data) => {
   try {
     writeFileSync(filePath, data);
   } catch (error) {
@@ -22,4 +22,4 @@ const postHeaderDataModel = (data) => {
   }
 };
 
-module.exports = { getHeaderDataModel, postHeaderDataModel };
+module.exports = { getHeaderPersonDataModel, postHeaderPersonDataModel };

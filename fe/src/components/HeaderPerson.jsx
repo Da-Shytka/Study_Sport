@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import headerData from "../mockData/headerData";
+import headerData from "../mockData/headerPersonData";
 import Logo from "../assets/img/logo.png";
 
 import useFetchData from "../hooks/useFetchData";
@@ -38,8 +38,20 @@ export const BurgerTemplate = ({ isBurgerActive, setIsMenuShown }) => (
   </div>
 );
 
+export const MenuItemTemplate = ({ menuItemData }) => {
+  const { title, href } = menuItemData;
+
+  return (
+    <li className="menu__item">
+      <a href={href} className="item__link">
+        {title}
+      </a>
+    </li>
+  );
+};
 
 export const ButtonTemplate = ({ buttonData }) => {
+  // console.log(buttonData);
   const { title, href, isPrimary } = buttonData;
 
   return (
@@ -60,7 +72,7 @@ export const RightHeaderTemplate = ({
   isMenuShown,
   setIsMenuShown,
 }) => {
-  const { buttonsData } = rightHeaderData;
+  const { menuData, buttonsData } = rightHeaderData;
 
   return (
     <>
@@ -76,6 +88,11 @@ export const RightHeaderTemplate = ({
             <div className="menu__line"></div>
             <div className="menu__line"></div>
           </div>
+          <ul className="menu">
+            {menuData.map((item, index) => (
+              <MenuItemTemplate key={index} menuItemData={item} />
+            ))}
+          </ul>
         </aside>
         <div className="cta_buttons">
           {buttonsData.map((button, index) => (
@@ -87,7 +104,7 @@ export const RightHeaderTemplate = ({
   );
 };
 
-const Header = () => {
+const HeaderPerson = () => {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isMenuShown, setIsMenuShown] = useState(false);
 
@@ -98,7 +115,12 @@ const Header = () => {
     },
   });
 
-  const { logoData, buttonsData } = headerData;
+  // console.log(`isLoading: ${isLoading}`);
+  // console.log(`isError: ${isError}`);
+  // console.log(`error: ${error}`);
+  // console.log(data);
+
+  const { logoData, menuData, buttonsData } = headerData;
 
   useEffect(() => {
     const updateBurgerState = () => {
@@ -139,6 +161,7 @@ const Header = () => {
       />
       <RightHeaderTemplate
         rightHeaderData={{
+          menuData: data.menuData ? data.menuData : menuData,
           buttonsData: data.buttonsData ? data.buttonsData : buttonsData,
         }}
         isBurgerActive={isBurgerActive}
@@ -149,4 +172,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderPerson;
