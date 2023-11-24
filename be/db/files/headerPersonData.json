@@ -3,9 +3,5 @@
   "menuData": [
     { "title": "Главная", "href": "/" },
     { "title": "Загрузка изображений", "href": "/imageGallery" }
-  ],
-  "buttonsData": [
-    { "title": "Войти", "href": "#", "isPrimary": false },
-    { "title": "Зарегистрироваться", "href": "#", "isPrimary": true }
   ]
 }

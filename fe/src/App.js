@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Login from "./pages/Login";
+import LoginAdmin from "./pages/LoginAdmin";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Image from "./pages/Image";
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "admin",
-    element: <Login />,
+    element: <LoginAdmin />,
   },
   {
     path: "admin/home",

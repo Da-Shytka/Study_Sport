@@ -50,21 +50,6 @@ export const MenuItemTemplate = ({ menuItemData }) => {
   );
 };
 
-export const ButtonTemplate = ({ buttonData }) => {
-  // console.log(buttonData);
-  const { title, href, isPrimary } = buttonData;
-
-  return (
-    <a href={href}>
-      <button
-        className={`cta_buttons__signin btn${isPrimary ? " primary-btn" : ""}`}
-      >
-        {title}
-      </button>
-    </a>
-  );
-};
-
 // функция создания шаблона с параметрами правой части меню
 export const RightHeaderTemplate = ({
   rightHeaderData,
@@ -72,7 +57,7 @@ export const RightHeaderTemplate = ({
   isMenuShown,
   setIsMenuShown,
 }) => {
-  const { menuData, buttonsData } = rightHeaderData;
+  const { menuData } = rightHeaderData;
 
   return (
     <>
@@ -94,11 +79,6 @@ export const RightHeaderTemplate = ({
             ))}
           </ul>
         </aside>
-        <div className="cta_buttons">
-          {buttonsData.map((button, index) => (
-            <ButtonTemplate key={index} buttonData={button} />
-          ))}
-        </div>
       </div>
     </>
   );
@@ -120,7 +100,7 @@ const HeaderPerson = () => {
   // console.log(`error: ${error}`);
   // console.log(data);
 
-  const { logoData, menuData, buttonsData } = headerData;
+  const { logoData, menuData } = headerData;
 
   useEffect(() => {
     const updateBurgerState = () => {
@@ -162,7 +142,6 @@ const HeaderPerson = () => {
       <RightHeaderTemplate
         rightHeaderData={{
           menuData: data.menuData ? data.menuData : menuData,
-          buttonsData: data.buttonsData ? data.buttonsData : buttonsData,
         }}
         isBurgerActive={isBurgerActive}
         isMenuShown={isMenuShown}

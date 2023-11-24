@@ -1,8 +1,17 @@
 import { useState } from "react";
+import useFetchData from "../hooks/useFetchData";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]); //хранит изображения
   const [currentImageIndex, setCurrentImageIndex] = useState(0); //хранит индекс
+
+
+  const { isError, error, data, isLoading } = useFetchData({
+    endpoint: "imageGallery",
+    options: {
+      method: "GET",
+    },
+  });
 
   const handleImageUpload = (e) => {
     const uploadedImages = Array.from(e.target.files);

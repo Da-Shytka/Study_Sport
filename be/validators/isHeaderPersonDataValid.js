@@ -2,9 +2,9 @@ const { isArrayHasLength, isObjectHasProps } = require("./utils/validators");
 
 const isHeadderPersonDataValid = (data) => {
   // проверяем объект на наличие полей и соответствие типу "объект"
-  isObjectHasProps(data, ["logoData", "menuData", "buttonsData"]);
+  isObjectHasProps(data, ["logoData", "menuData"]);
 
-  const { logoData, menuData, buttonsData } = data;
+  const { logoData, menuData } = data;
 
   // проверяем внутренний объект на наличие полей и соответствие типу "объект"
   isObjectHasProps(logoData, ["alt", "src", "href"]);
@@ -14,14 +14,7 @@ const isHeadderPersonDataValid = (data) => {
 
   // проверяем внутренние объекты на наличие полей и соответствие типу "объект"
   menuData.forEach((item) => isObjectHasProps(item, ["title", "href"]));
-
-  // проверяем внутренний массив на наличие полей и соответствие типу "массив"
-  isArrayHasLength(buttonsData);
-
-  // проверяем внутренние объекты на наличие полей и соответствие типу "объект"
-  buttonsData.forEach((button) =>
-    isObjectHasProps(button, ["title", "href", "isPrimary"])
-  );
+  
 };
 
 module.exports = isHeadderPersonDataValid;

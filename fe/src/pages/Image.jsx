@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import HeaderPerson from "../components/HeaderPerson";
 import ImageGallery from "../components/ImageGallery";
 
 const Image = () => {
@@ -13,7 +13,7 @@ const Image = () => {
     <>
       <div>
         <section className="section header">
-          <Header onClick={handleNavigateToHome}/>
+          <HeaderPerson onClick={handleNavigateToHome}/>
         </section>
         <section className="App">
           <div className="imageText">
