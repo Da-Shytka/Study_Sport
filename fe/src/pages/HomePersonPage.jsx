@@ -1,6 +1,6 @@
 import HeaderPerson from "../components/HeaderPerson";
 
-const HomePerson = () => {
+const HomePersonPage = () => {
   return (
     <>
       <section className="section header">
@@ -10,4 +10,4 @@ const HomePerson = () => {
   );
 };
 
-export default HomePerson;
+export default HomePersonPage;

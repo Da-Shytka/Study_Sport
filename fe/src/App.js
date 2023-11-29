@@ -1,32 +1,42 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import LoginAdmin from "./pages/LoginAdmin";
-import Home from "./pages/Home";
+import LoginAdminPage from "./pages/LoginAdminPage";
+import HomePage from "./pages/HomePage";
 import Error from "./pages/Error";
-import Image from "./pages/Image";
+import ImagePersonPage from "./pages/ImagePersonPage";
+import LoginPage from "./pages/LoginPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
     errorElement: <Error />,
   },
   {
     path: "admin",
-    element: <LoginAdmin />,
+    element: <LoginAdminPage />,
   },
   {
     path: "admin/home",
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     path: "imageGallery",
-    element: <Image />,
+    element: <ImagePersonPage />,
   },
   {
     path: "imageGallery/home",
-    element: <Home />,
+    element: <HomePage />,
   },
+  {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
+    path: "registration",
+    element: <RegistrationPage />,
+  }
 ]);
 
 function App() {

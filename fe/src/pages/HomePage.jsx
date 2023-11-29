@@ -1,6 +1,6 @@
-import Header from "../components/HeaderPerson";
+import Header from "../components/Header";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <section className="section header">
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

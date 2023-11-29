@@ -1,12 +1,12 @@
 export const buttonsData = [
   {
     title: "Войти",
-    href: "#",
+    href: "/login",
     isPrimary: false,
   },
   {
     title: "Регистрация",
-    href: "#",
+    href: "/registration",
     isPrimary: true,
   },
 ];

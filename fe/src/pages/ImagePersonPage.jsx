@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import HeaderPerson from "../components/HeaderPerson";
 import ImageGallery from "../components/ImageGallery";
 
-const Image = () => {
+const ImagePersonPage = () => {
 
   // Функция для обработки нажатия на ссылку "Главная"
   const navigate = useNavigate();
@@ -26,4 +26,4 @@ const Image = () => {
   );
 };
 
-export default Image;
+export default ImagePersonPage;
